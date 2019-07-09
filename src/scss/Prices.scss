@@ -1,0 +1,20 @@
+div#prices {
+    padding: 50px 10%;
+    h1 {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    div.crypto {
+        display: grid;
+        padding: 30px;
+        border: 1px solid #7aaeff;
+        border-radius: 30px;
+        width: auto;
+        h2 {
+            display: inline-block;
+        }
+        p {
+            display: inline-block;
+        }
+    }
+}
