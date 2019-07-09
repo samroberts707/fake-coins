@@ -1,0 +1,23 @@
+nav#navigation {
+    width: 100vw;
+    height: 100px;
+    padding: 20px 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: left;
+    div.brand {
+        display: grid;
+        grid-template-columns: 70px 1fr;
+        align-items: center;
+        img {
+            width: 100%;
+            max-height: 100%;
+        }
+        h1 {
+            display: inline-block;
+            vertical-align: middle;
+            padding-left: 20px;
+            font-size: 32px;
+        }
+    }
+}
