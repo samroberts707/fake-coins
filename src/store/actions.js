@@ -1,12 +1,12 @@
-export const setPrices = (prices) => ({
-    type: 'SET_PRICES',
-    prices
+export const setBTCPrice = (btc) => ({
+    type: 'SET_BTC',
+    btc
 })
 
-export const startSetPrices = () => {
+export const getBTCPrice = () => {
     return dispatch => {
-        fetch('https://api.coinbase.com/v2/prices/ETH-USD/buy')
+        fetch('https://api.coinbase.com/v2/prices/BTC-USD/spot')
             .then(function(response) { return response.json() })
-            .then(json => dispatch(setPrices(json)));
+            .then(json => dispatch(setBTCPrice(json)));
     }
 }

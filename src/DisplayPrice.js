@@ -5,8 +5,9 @@ class DisplayPrice extends Component {
     render() { 
         return (
             <div className="crypto" id={this.props.base}>
+                <div className="icon"></div>
                 <h2>{this.props.base}</h2>
-                <p>{this.props.price}</p>
+                <p className={this.props.change}>{this.props.amount}</p>
             </div>
         );
     }

@@ -1,14 +1,16 @@
 const defaultState = {
     data: {
         base: 'BTC',
-        amount: '0'
+        currency: 'USD',
+        amount: '0',
+        change: 'none'
     }
 };
 
 export default(state = defaultState, action) => {
     switch(action.type) {
-        case 'SET_PRICES':
-            return action.prices;
+        case 'SET_BTC':
+            return action.btc;
         default:
             return state;
     }
