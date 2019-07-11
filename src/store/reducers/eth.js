@@ -1,16 +1,16 @@
 const defaultState = {
     data: {
-        base: 'BTC',
+        base: 'ETH',
         currency: 'USD',
         amount: '0',
-        change: 'none'
     }
 };
 
+
 export default(state = defaultState, action) => {
     switch(action.type) {
-        case 'SET_BTC':
-            return action.btc;
+        case 'SET_ETH':
+            return action.eth;
         default:
             return state;
     }

@@ -2,51 +2,59 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Navigation from './Navigation';
 import DisplayPrice from './DisplayPrice';
-import {getBTCPrice} from './store/actions';
-import { throwStatement } from "@babel/types";
+import {getBTCPrice,getETHPrice} from './store/actions';
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
-        this.state = {
-            change: "none"
-        };
-    }
+    //     this.state = {
+    //         // change: "none"
+    //     };
+    // }
     componentDidMount() {
         var self = this;
         this.props.getBTCPrice();
+        this.props.getETHPrice();
         setInterval(function() {
             self.props.getBTCPrice();
+            self.props.getETHPrice();
         }, 32000);
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if (this.props.prices.data.amount > prevProps.prices.data.amount) {
-            this.setState({
-                change: "increase"
-            });
-        } else if (this.props.prices.data.amount < prevProps.prices.data.amount) {
-            this.setState({
-                change: "decrease"
-            });
-        }
+    componentDidUpdate() {
+        
     }
 
     render() {
+        console.log('New Render!');
         var priceObjects = [];
-        console.log(priceObjects);
+        for (var object in this.props.prices) {
+            priceObjects.push(<DisplayPrice key={object} amount={this.props.prices[object].data.amount} base={this.props.prices[object].data.base} />)
+        }
         return (
           <div>
               <Navigation/>
               <div id="prices">
                   <h1>Prices</h1>
-                  <DisplayPrice base={this.props.prices.data.base} amount={this.props.prices.data.amount} change={this.state.change} />
+                  {priceObjects}
               </div>
           </div>  
         );
     }
 }
+
+// function compareDiff() {
+//     if (this.props.prices.data.amount > prevProps.prices.data.amount) {
+//         this.setState({
+//             change: "increase"
+//         });
+//     } else if (this.props.prices.data.amount < prevProps.prices.data.amount) {
+//         this.setState({
+//             change: "decrease"
+//         });
+//     }
+// }
 
 const mapStateToProps = (state) => {
     return {
@@ -56,7 +64,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getBTCPrice: () => dispatch(getBTCPrice())
+        getBTCPrice: () => dispatch(getBTCPrice()),
+        getETHPrice: () => dispatch(getETHPrice())
     }
 }
 

@@ -17,6 +17,9 @@ div.crypto {
         display: block;
         text-align: center;
     }
+    p:before {
+        content: "$";
+    }
     p:after {
         padding-left: 6px;
         font-size: 20px;
@@ -35,5 +38,8 @@ div.crypto {
     }
     &#BTC div.icon {
         background-image: url('https://static.coindesk.com/images/cryptoeconomics/icons/svg/btc.edae64fc.svg');
+    }
+    &#ETH div.icon {
+        background-image: url('https://static.coindesk.com/images/cryptoeconomics/icons/svg/eth.ed79179a.svg');
     }
 }

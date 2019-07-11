@@ -10,3 +10,16 @@ export const getBTCPrice = () => {
             .then(json => dispatch(setBTCPrice(json)));
     }
 }
+
+export const setETHPrice = (eth) => ({
+    type: 'SET_ETH',
+    eth
+})
+
+export const getETHPrice = () => {
+    return dispatch => {
+        fetch('https://api.coinbase.com/v2/prices/ETH-USD/spot')
+            .then(function(response) { return response.json() })
+            .then(json => dispatch(setETHPrice(json)));
+    }
+}
