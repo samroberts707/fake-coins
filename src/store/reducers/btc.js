@@ -3,7 +3,8 @@ const defaultState = {
         base: 'BTC',
         currency: 'USD',
         amount: '0',
-    }
+    },
+    change: "none"
 };
 
 export default(state = defaultState, action) => {

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Navigation from './Navigation';
 import DisplayPrice from './DisplayPrice';
+import OpenPosition from './OpenPosition';
 import {getBTCPrice,getETHPrice} from './store/actions';
 
 class Home extends Component {
@@ -39,13 +40,17 @@ class Home extends Component {
                   <h1>Prices</h1>
                   {priceObjects}
               </div>
+              <div id="positions">
+                  <h1>Positions</h1>
+                  <OpenPosition />
+              </div>
           </div>  
         );
     }
 }
 
-// function compareDiff() {
-//     if (this.props.prices.data.amount > prevProps.prices.data.amount) {
+// function compareDiff(object) {
+//     if (this.props.prices[object].data.amount > prevProps.prices[object].data.amount) {
 //         this.setState({
 //             change: "increase"
 //         });

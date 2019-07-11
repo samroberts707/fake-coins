@@ -8,6 +8,8 @@ class DisplayPrice extends Component {
                 <div className="icon"></div>
                 <h2>{this.props.base}</h2>
                 <p className={this.props.change}>{this.props.amount}</p>
+                <input type="number" min="0" step="0.01" />
+                <button className="buy">Buy</button>
             </div>
         );
     }

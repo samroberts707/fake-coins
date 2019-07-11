@@ -1,3 +1,7 @@
+The app currently uses CoinBase's open API, which requires a seperate request for each Crypto.
+
+If I want to improve performance or go live I will need to move to a different API such as: https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
