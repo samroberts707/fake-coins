@@ -30,3 +30,8 @@ export const addNewPosition = (base, quantity, boughtFor) => ({
     quantity,
     boughtFor
 })
+
+export const chargeBank = (amount) => ({
+    type: "RED_BANK",
+    amount
+})

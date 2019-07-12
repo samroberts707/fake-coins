@@ -13,6 +13,7 @@ const defaultState = {
 
 
 export default(state = defaultState, action) => {
+    var bank = state.bank;
     switch(action.type) {
         case 'ADD_POS':
             return Object.assign({}, state, {
@@ -25,6 +26,11 @@ export default(state = defaultState, action) => {
                     }
                 ]
             })
+        case 'RED_BANK': 
+            return { 
+                bank: bank - action.amount,
+                positions: [...state.positions]
+            };
         default:
             return state;
     }

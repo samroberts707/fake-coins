@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import {addNewPosition} from './store/actions';
+import {addNewPosition,chargeBank} from './store/actions';
 
 class DisplayPrice extends Component {
     render() { 
@@ -10,6 +10,8 @@ class DisplayPrice extends Component {
                     e.preventDefault()
                     if (this._inputElement.value !== 0) {
                         this.props.addNewPosition(this.props.base,this._inputElement.value,this.props.amount);
+                        var amount = this.props.amount * this._inputElement.value;
+                        this.props.chargeBank(amount);
                         this._inputElement.value = "";
                     }
                 }}>
@@ -26,7 +28,8 @@ class DisplayPrice extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addNewPosition: (base, quantity, boughtFor) => dispatch(addNewPosition(base, quantity, boughtFor))
+        addNewPosition: (base, quantity, boughtFor) => dispatch(addNewPosition(base, quantity, boughtFor)),
+        chargeBank: (amount) => dispatch(chargeBank(amount))
     }
 }
 
