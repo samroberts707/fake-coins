@@ -23,3 +23,10 @@ export const getETHPrice = () => {
             .then(json => dispatch(setETHPrice(json)));
     }
 }
+
+export const addNewPosition = (base, quantity, boughtFor) => ({
+    type: "ADD_POS",
+    base,
+    quantity,
+    boughtFor
+})

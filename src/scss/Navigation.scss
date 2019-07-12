@@ -4,7 +4,6 @@ nav#navigation {
     padding: 20px 10%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-content: left;
     div.brand {
         display: grid;
         grid-template-columns: 70px 1fr;
@@ -18,6 +17,25 @@ nav#navigation {
             vertical-align: middle;
             padding-left: 20px;
             font-size: 32px;
+        }
+    }
+    div.user {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 40px;
+        align-items: center;
+        justify-items: right;
+        h4 {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 24px;
+            color: #7e7e7e;
+            &:before {
+                content: "$";
+            }
+        }
+        img.user-profile {
+            width: 35px;
         }
     }
 }

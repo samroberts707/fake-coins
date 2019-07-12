@@ -1,65 +1,68 @@
 div.crypto {
-    display: grid;
-    grid-template-columns: 1fr 1fr 3fr 2fr 2fr;
-    align-items: center;
+    
     width: auto;
     padding: 20px 10px;
     margin-bottom: 20px;
     border: 1px solid #7aaeff;
     border-radius: 12px;
-    div.icon {
-        width: 100%;
-        height: 100%;
-        background-size: contain;
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
-    h2, p {
-        display: block;
-        text-align: center;
-    }
-    p:before {
-        content: "$";
-    }
-    p:after {
-        padding-left: 6px;
-        font-size: 20px;
-    }
-    p.none:after {
-        content: "-";
-        color: lightgrey;
-    }
-    p.increase:after {
-        content: "↑";
-        color: green;
-    }
-    p.decrease:after {
-        content: "↓";
-        color: red;
-    }
-    input[type="number"] {
-        display: inline-block;
-        width: 100px;
-        border: 1px solid #7aaeff;
-        border-radius: 100px;
-        padding: 5px 10px;
-        font-size: 16px;
-    }
-    button {
-        display: inline-block;
-        width: 100px;
-        border: none;
-        border-radius: 100px;
-        padding: 5px 10px;
-        font-size: 19px;
-        color: #FFF;
-        opacity: 0.5;
-        transition: opacity 0.3s ease-in-out;
-        &.buy {
-            background-color: green;
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr 3fr 2fr 2fr;
+        align-items: center;
+        div.icon {
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
         }
-        &:hover {
-            opacity: 1;
+        h2, p {
+            display: block;
+            text-align: center;
+        }
+        p:before {
+            content: "$";
+        }
+        p:after {
+            padding-left: 6px;
+            font-size: 20px;
+        }
+        p.none:after {
+            content: "-";
+            color: lightgrey;
+        }
+        p.increase:after {
+            content: "↑";
+            color: green;
+        }
+        p.decrease:after {
+            content: "↓";
+            color: red;
+        }
+        input[type="number"] {
+            display: inline-block;
+            width: 100px;
+            border: 1px solid #7aaeff;
+            border-radius: 100px;
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+        button {
+            display: inline-block;
+            width: 100px;
+            border: none;
+            border-radius: 100px;
+            padding: 5px 10px;
+            font-size: 19px;
+            color: #FFF;
+            opacity: 0.5;
+            transition: opacity 0.3s ease-in-out;
+            &.buy {
+                background-color: green;
+            }
+            &:hover {
+                opacity: 1;
+            }
         }
     }
     &#BTC div.icon {
